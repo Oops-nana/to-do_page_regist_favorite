@@ -42,8 +42,6 @@
 
 - 클라이언트 연동
 
-
-
 ## **메인페이지**                                    회원가입
 
-<img title="" src="file:///C:/Users/User/AppData/Roaming/marktext/images/2022-01-14-21-04-25-image.png" alt="" data-align="inline" width="342"><img title="" src="file:///C:/Users/User/AppData/Roaming/marktext/images/2022-01-14-21-05-57-image.png" alt="" width="283">
+<img src="https://user-images.githubusercontent.com/64791173/149513639-303a3ffd-887d-4c04-90c0-077a54f8c340.PNG" title="" alt="main" width="322"><img src="https://user-images.githubusercontent.com/64791173/149513655-0cb28f76-8ac7-4202-b1df-00a4d952a701.PNG" title="" alt="regist" width="302">
