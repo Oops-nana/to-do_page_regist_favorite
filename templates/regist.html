@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Todo-list</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+    <style>
+        .wrap{
+            display: flex;
+        }
+        .login_form{
+            width: 500px;
+            margin: 100px auto 400px auto;
+            height: 700px;
+
+            text-align: center;
+            padding: 50px;
+            background: white;
+
+            border: solid 3px;
+            border-radius: 40px;
+        }
+        .form-control{
+            background-color: #FFFCF5;
+
+            margin-top: 50px;
+            outline: none;
+
+            border: none;
+            border-radius: 30px;
+        }
+        .btn{
+            width: 100px;
+            margin: 100px auto 100px auto;
+
+            border-radius: 30px;
+        }
+
+        .text_regist{
+            margin: auto;
+            font-family: 'Black Han Sans', sans-serif;
+        }
+        .back{
+            /*background-image: url("https://i.pinimg.com/originals/b5/2b/5b/b52b5b29d6acc1c13cc0eb41db6a56c4.jpg");*/
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color: #00123e;
+        }
+        .interest{
+            margin: auto;
+
+            background-color: #FFFCF5;
+
+        }
+    </style>
+    <script>
+        function regist() {
+            // 주문하기 API 연결
+            let user_name = $('#user-name').val()
+            let user_id = $('#user-id').val()
+            let user_pw = $('#user-pw').val()
+            let interest = $('input[name="inlineRadioOptions"]:checked').val()
+
+						$.ajax({
+                type: "POST",
+                url: "/registing",
+                data: {
+                    name_give:user_name,id_give:user_id,pw_give:user_pw
+                    ,interest_give:interest
+                },
+                success: function (response) { // 성공하면
+                    if (user_pw ==""){
+                        alert('비밀번호를 입력해주세요~!');
+                    }else if (user_name ==""){
+                        alert('이름을 입력해주세요');
+                    }else if(user_id ==""){
+                        alert('아이디를 입력해주세요')
+                     //}else if (interest ==''){
+                        //  alert('관심사를 골라주세요');
+                    }else {alert(response['msg'])
+                    }
+                        location.replace('/');
+                }
+            })
+        }
+    </script>
+</head>
+<body class="back">
+    <nav class="navbar navbar-light bg-light">
+        <h1 class="text_regist">Todo-list</h1>
+    </nav>
+<div class="wrap">
+    <div class="login_form">
+        <h2 style="font-family: 'Black Han Sans', sans-serif;">회원 가입</h2>
+        <div class="input-group">
+        <input type="text" class="form-control is-invalid" id="user-name" placeholder="이름" aria-describedby="inputGroupPrepend3" required>
+        <div class="invalid-feedback">
+            <span style="color: lightslategrey">이름을 알려주세요.</span>
+        </div>
+      </div>
+        <br>
+        <div class="input-group">
+        <input type="text" class="form-control is-invalid" id="user-id" placeholder="ID" aria-describedby="inputGroupPrepend3" required>
+        <div class="invalid-feedback">
+            <span style="color: lightslategrey">아이디를 입력해주세요.</span>
+        </div>
+      </div>
+        <br>
+        <div class="input-group">
+        <input type="text" class="form-control is-invalid" id="user-pw" placeholder="PW" aria-describedby="inputGroupPrepend3" required>
+        <div class="invalid-feedback">
+            <span style="color: lightslategrey">비밀번호를 입력해주세요.</span>
+        </div>
+            <p class="interest">관심사</p>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest"
+                       value="trip">
+                <label class="form-check-label" for="interest">여행</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest2"
+                       value="movie">
+                <label class="form-check-label" for="interest2">영화</label>
+                <input type="hidden" name="inlineRadioOptions" value='0' id="input_check_hidden"/>
+            </div>
+            <button type="button"  class="btn btn-light" style="font-family: 'Gugi', cursive;" onclick="regist()" id="btn-regist">가입하기</button>
+      </div>
+    </div>
+    </div>
+
+
+</body>
+</html>

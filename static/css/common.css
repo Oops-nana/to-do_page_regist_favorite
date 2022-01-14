@@ -1,0 +1,414 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+@font-face {
+     font-family: 'S-CoreDream-5Medium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+@font-face {
+     font-family: 'S-CoreDream-7ExtraBold';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+/*초기화*/
+body,h2,ul,li { margin: 0; padding: 0; }
+li { list-style: none; }
+a { text-decoration: none; }
+.hidden { text-indent: -9999px; }
+
+html, body{
+    line-height: inherit;
+}
+label {
+    margin-bottom: 0;
+}
+h2 {
+    line-height: inherit;
+}
+.text_regist{
+            margin: auto;
+            font-family: 'Black Han Sans', sans-serif;
+        }
+body {
+    width: 100%;
+    background-color: #00073f;
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+
+}
+.today-box {
+    width: 350px;
+    margin: 69px auto 0;
+    text-align: center;
+    position: relative;
+}
+.weather{
+    margin: 0 auto -5px;
+}
+.weather_icon {
+    margin: 0 auto;
+    width: 48px;
+    height: 48px;
+}
+.weather_icon img{
+    width: 100%;
+    height: 100%;
+}
+.weather_info {
+    font-weight: 200;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    margin-top: 10px;
+}
+.time {
+    font-family: 'S-CoreDream-5Medium',sans-serif;
+    font-size: 122px;
+    letter-spacing: 0.02em;
+}
+.date {
+    margin-top: 3px;
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 0.54em;
+}
+.today-box::before{
+    content:'';
+    display: block;
+    width: 34px;
+    border-bottom: 3px solid #fff;
+    position: absolute;
+    bottom: -46px;
+    left: calc(50% - 17px)
+}
+
+.main{
+    width: 913px;
+    margin: 85px auto 0;
+    color: #222;
+    overflow: hidden;
+}
+.todo-box{
+    width: 522px;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 19px 0 0 51px;
+    box-sizing: border-box;
+    float: left;
+    padding-bottom: 39px!important;
+}
+.todo-box h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.todo-box ul {
+    margin: 17px 0 0 27px;
+}
+.todo-box ul li {
+    margin-bottom: 15px;
+}
+.todo-box ul li:last-of-type{
+    margin-bottom: 0;
+}
+.todo-box ul li input {
+    display: none;
+
+}
+.todo-box ul li input + label {
+    cursor: pointer;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../img/non_checked.svg") no-repeat center / cover;
+    vertical-align: -1.5px;
+}
+.todo-box ul li input:checked + label {
+    background-image: url("../img/checked.svg");
+}
+.todo-box ul li input + label + label {
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.todo-box ul li input:checked + label + label {
+    color: #979797;
+}
+.todo-box ul li > span{
+    float: right;
+    margin-right: 38px;
+    position: relative;
+}
+.todo-box ul li > span::before{
+    content:'';
+    display: block;
+    height: 14px;
+    border-right: 1px solid #222;
+    position: absolute;
+    right: 21px;
+    top: 5px;
+}
+
+.todo-box ul li > span > span {
+    display: inline-block;
+    width: 88px;
+    height: 15px;
+    background: no-repeat center / cover;
+}
+.todo-box ul li > span > span.star1{
+    background-image: url("../img/star1.svg");
+}
+.todo-box ul li > span > span.star2{
+    background-image: url("../img/star2.svg");
+}
+.todo-box ul li > span > span.star3{
+    background-image: url("../img/star3.svg");
+}
+.todo-box ul li > span > span.star4{
+    background-image: url("../img/star4.svg");
+}
+.todo-box ul li > span > span.star5{
+    background-image: url("../img/star5.svg");
+}
+.todo-box ul li input:checked+label+label+span span.star1{
+    background-image: url("../img/star1_checked.svg");
+}
+.todo-box ul li input:checked+label+label+span span.star2{
+    background-image: url("../img/star2_checked.svg");
+}
+.todo-box ul li input:checked+label+label+span span.star3{
+    background-image: url("../img/star3_checked.svg");
+}
+.todo-box ul li input:checked+label+label+span span.star4{
+    background-image: url("../img/star4_checked.svg");
+}
+.todo-box ul li input:checked+label+label+span span.star5{
+    background-image: url("../img/star5_checked.svg");
+}
+
+.todo-box ul li span button {
+    border: 0;
+    width: 9px;
+    height: 13px;
+    background-color: transparent;
+    background: url("../img/close.svg") no-repeat center / cover;
+    vertical-align: 2px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.hobby_wrap{
+    float: right;
+}
+.hobby_wrap > div{
+    width: 367px;
+    height: 294px;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 19px 0 0 51px;
+    box-sizing: border-box;
+    position: relative;
+}
+.hobby_wrap > div h2{
+    font-size: 20px;
+    font-weight: 700;
+}
+.hobby_wrap > div ul{
+    margin: 20px 0 0 19px;
+}
+.hobby_wrap > div ul li{
+    margin-bottom: 13px;
+    font-size: 18px;
+    color: #222;
+}
+.hobby_wrap > div ul li:last-of-type{
+    margin-bottom: 0!important;
+}
+.hobby_wrap > div ul li span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    background-color: #9901d1;
+    color: #fff;
+    font-family: 'S-CoreDream-7ExtraBold',sans-serif;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: 4px;
+    margin-right: 7px;
+}
+.hobby_wrap > div p{
+    font-size: 9px;
+    font-weight: 300;
+    position: absolute;
+    margin-bottom: 0;
+    bottom: 8px;
+    left: 72px;
+}
+.hobby_wrap > div.travel-box ul{
+    margin-left: 0;
+}
+.hobby_wrap > div.travel-box ul li{
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 300px;
+    font-size: 16px;
+    letter-spacing: -0.08em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.hobby_wrap > div.travel-box ul li span{
+    width: 50px;
+}
+.hobby_wrap > div.travel-box p{
+    left: 50px;
+}
+.hobby_on{
+    display: block;
+}
+.hobby_off{
+    display: none;
+}
+
+
+.movie-box{
+    width: 367px;
+    height: 294px;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 19px 0 0 51px;
+    box-sizing: border-box;
+}
+.movie-box h2{
+    font-size: 20px;
+    font-weight: 700;
+}
+.movie-box ul{
+    margin: 20px 0 0 19px;
+}
+.movie-box ul li{
+    margin-bottom: 13px;
+}
+.movie-box ul li:last-of-type{
+    margin-bottom: 0;
+}
+.movie-box ul li a{
+    font-size: 18px;
+    color: #222;
+}
+.movie-box ul li a span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    background-color: #9901d1;
+    color: #fff;
+    font-family: 'S-CoreDream-7ExtraBold',sans-serif;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: 4px;
+    margin-right: 7px;
+}
+.travel-box{
+    display: none;
+}
+
+.add_wrap{
+    /*margin-top: 95px;*/
+    margin: 180px auto 0;
+    width: 625px;
+    position: relative;
+}
+.add_wrap > button{
+    padding: 0;
+    text-indent: -9999px;
+    width: 98px;
+    height: 98px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent linear-gradient(180deg, rgba(148, 1, 206, 1) 0%, rgba(67, 0, 130, 1) 92%);
+    cursor: pointer;
+    position: absolute;
+    /*top: -49px;*/
+    top: -134px;
+    left: calc(50% - 49px);
+    z-index: 100;
+}
+.add_wrap > button span{
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% - 22px);
+    width: 44px;
+    height: 44px;
+    background: url("../img/add_button.svg") no-repeat center / cover;
+    transform: rotate(0deg);
+}
+.add_wrap > button:hover span{
+    transform: rotate(360deg);
+    transition: 0.8s;
+}
+.add_box{
+    display: none;
+    background-color: #fff;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    width: 625px;
+    height: 218px;
+}
+.add_content{
+    overflow: hidden;
+    color: #222;
+    font-size: 16px;
+    font-weight: 700;
+    width: 473px;
+    margin: 85px auto 0;
+}
+.todo-group{
+    float: left;
+}
+.todo-group input{
+    border: 0;
+    border-bottom: 1px solid #222;
+    width: 260px;
+    margin-left: 4px;
+}
+.star-group{
+    float: right;
+}
+.star_option {
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid #222;
+    width: 26px;
+    text-align: center;
+    margin-left: 4px;
+}
+.add_box button {
+    width: 97px;
+    height: 34px;
+    border: 0;
+    background-color: #9401ce;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 57px auto 0;
+    display: block;
+    cursor: pointer;
+}
+.add_wrap > a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    display: block;
+    margin: 43px auto 40px;
+    width: 70px;
+    height: 20px;
+}
+
